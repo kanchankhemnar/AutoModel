@@ -2,6 +2,7 @@ from sklearn.linear_model import LinearRegression
 import streamlit as st
 from .regression_utils import preprocess_data, evaluate_model
 import Regression.regressionReport as regressionReport
+from utils.save_outputs import save_model
 
 
 def run_linear_regression(dataset, target_col):
@@ -20,3 +21,5 @@ def run_linear_regression(dataset, target_col):
     evaluate_model(model, X_test, y_test)
     y_pred = model.predict(X_test)
     regressionReport.regression_report(y_test, y_pred)
+    save_model(model)
+

@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
-from src import upload, profile, train, download, sidebar
+from src import upload, train, download, sidebar ,profiling
 
 st.set_page_config("AutoModel", "🤖", layout="wide")
 st.title("AutoML dashboard 📊📈")
@@ -22,7 +22,7 @@ if choice == "Upload":
     dataset = upload.upload_dataset(dataset)
 
 elif choice == "Profiling":
-    profile.profile_data(dataset)
+    profiling.profile_data(dataset)
 
 elif choice == "Train":
     train.train_model(dataset)

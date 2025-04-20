@@ -3,8 +3,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import r2_score, root_mean_squared_error, mean_absolute_error
 import numpy as np
+import time
+from utils.save_outputs import save_html_report,save_plot
+
+
 
 def regression_report(y_true, y_pred):
+    with st.spinner("Executing 🚀..."):
+        time.sleep(3)
     st.markdown("## 📊 Model Evaluation Report")
 
     # Metrics
@@ -50,3 +56,24 @@ def regression_report(y_true, y_pred):
     ax4.tick_params(axis='both', labelsize=6)
     ax4.set_xlabel("Prediction Error",fontsize=6)
     st.pyplot(fig4)
+
+    # saving images 
+    
+    save_plot(fig1, "residuals_plot.png")
+    save_plot(fig2, "actual_vs_pred.png")
+    save_plot(fig3, "error_dist.png")
+    save_plot(fig4, "error_boxplot.png")
+
+    # Saving HTML report
+    html_content = f"""
+    <html>
+    <head><title>Regression Report</title></head>
+    <body>
+    <h2>📊 Model Metrics</h2>
+    <p><b>R² Score:</b> {r2:.4f}</p>
+    <p><b>RMSE:</b> {rmse:.4f}</p>
+    <p><b>MAE:</b> {mae:.4f}</p>
+    </body>
+    </html>
+    """
+    save_html_report(html_content)
