@@ -1,0 +1,18 @@
+# :brain: Classification
+
+Classification is a supervised machine learning task used when your target variable is categorical.
+
+Examples:
+- Predicting whether an email is spam or not.
+- Classifying customer feedback as positive, neutral, or negative.
+
+Common classification types:
+- Binary classification
+- Multiclass classification
+
+Typical algorithms include:
+- Logistic Regression
+- Decision Tree Classifier
+- K-Nearest Neighbors (KNN)
+- Naive Bayes
+- Support Vector Machines (SVM)

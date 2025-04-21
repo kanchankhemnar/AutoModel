@@ -1,0 +1,28 @@
+{
+    "name": "Ensemble",
+    "ml_task": "multiclass_classification",
+    "optimize_metric": "logloss",
+    "selected_models": [
+        {
+            "model": "14_LightGBM",
+            "repeat": 1.0
+        },
+        {
+            "model": "19_DecisionTree",
+            "repeat": 2.0
+        },
+        {
+            "model": "1_DecisionTree",
+            "repeat": 3.0
+        },
+        {
+            "model": "20_LightGBM",
+            "repeat": 10.0
+        }
+    ],
+    "predictions_fname": "Ensemble\\predictions_ensemble.csv",
+    "metric_name": "logloss",
+    "final_loss": 1.3274248675991336,
+    "train_time": 1.6482882499694824,
+    "is_stacked": false
+}

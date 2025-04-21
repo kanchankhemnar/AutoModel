@@ -1,0 +1,18 @@
+name,model_type,metric_type,metric_value,train_time
+1_DecisionTree,Decision Tree,logloss,1.7298833203827746,2.69
+2_DecisionTree,Decision Tree,logloss,4.040112191623302,2.07
+3_DecisionTree,Decision Tree,logloss,4.040112191623302,2.1
+4_Linear,Linear,logloss,1.960236706620192,20.16
+14_LightGBM,LightGBM,logloss,1.6819907721783096,2.69
+5_Xgboost,Xgboost,logloss,1.701272771556551,3.23
+5_Xgboost_categorical_mix,Xgboost,logloss,1.730699924906354,3.52
+14_LightGBM_KMeansFeatures,LightGBM,logloss,1.5011230248651728,3.24
+15_LightGBM,LightGBM,logloss,1.5011230248651728,1.93
+16_LightGBM,LightGBM,logloss,1.6819907721783096,1.33
+17_Xgboost,Xgboost,logloss,1.7048868961300918,1.57
+18_Xgboost,Xgboost,logloss,1.7109145711372633,1.45
+19_DecisionTree,Decision Tree,logloss,2.1685965149248676,1.15
+20_LightGBM,LightGBM,logloss,1.4114436181872236,1.65
+21_LightGBM,LightGBM,logloss,1.4114436181872236,1.65
+22_LightGBM,LightGBM,logloss,1.4545974362296665,1.55
+Ensemble,Ensemble,logloss,1.3274248675991336,1.65

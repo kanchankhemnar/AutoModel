@@ -1,0 +1,13 @@
+# :dart: Multiclass Classification
+
+Multiclass classification is used when the target has more than two categories.
+
+Examples:
+- Flower species: Iris-setosa, Iris-versicolor, Iris-virginica
+- Digit recognition: 0 through 9
+
+Popular algorithms:
+- Decision Tree Classifier
+- KNN
+- Multinomial Naive Bayes
+- Logistic Regression (with multiclass support)

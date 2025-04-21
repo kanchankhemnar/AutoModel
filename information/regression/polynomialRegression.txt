@@ -1,0 +1,9 @@
+# :loop: Polynomial Regression
+
+Polynomial regression fits a curve to the data by including powers of the input features.
+
+Used when:
+- Relationship between target and feature is non-linear
+
+Example:
+- Predicting student performance with a U-shaped trend

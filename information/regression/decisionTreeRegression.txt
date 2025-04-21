@@ -1,0 +1,11 @@
+# :deciduous_tree: Decision Tree Regression
+
+A decision tree for regression splits data into regions and predicts the average output for each.
+
+Pros:
+- Easy to understand
+- Handles non-linearity
+
+Cons:
+- Can overfit
+- Sensitive to small data variations

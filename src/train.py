@@ -5,25 +5,40 @@ from Regression import linearRegression, multipleRegression, polynomialRegressio
 from Classification import binaryClassification,decisionTree,knn,logisticRegression,naiveBayes,svm
 import shutil
 from datetime import datetime
+from src import guidanceButton
+from src.compareModels import render_model_comparison
 import os
+
 
 def train_model(dataset):
     if dataset is None:
         st.warning(":arrow_double_up: Upload Dataset first")
         return
+    
+    st.info("## Select ML Task")
+    ml_task = st.selectbox(label="", options=["Classification", "Regression"],index=None ,placeholder="Select")
 
-    st.info("#### Select ML Task")
-    ml_task = st.selectbox(label="", options=["Select","Classification", "Regression"], placeholder="select")
+    model_choice=None
+
+    guidanceButton.render_info_button(ml_task,model_choice)
 
     # Regression
     
     if ml_task == "Regression":
-        model_choice = st.selectbox("Select Model",["Choose","All Models","Linear Regression","Multiple Regression","Polynomial Regression","Random Forest Regression","Decision Tree Regression"])
+        model_choice = st.selectbox("Select Model",["All Models","Linear Regression","Multiple Regression","Polynomial Regression","Random Forest Regression","Decision Tree Regression"],index=None,placeholder="Choose Model")
 
-        target_feature = "Select"
 
-        if(model_choice is not "Choose"):
-            target_feature = st.selectbox("Select target feature",["Select"] + list(dataset.columns))
+
+        target_feature = None
+
+        if(model_choice is not None):
+            guidanceButton.render_info_button(ml_task,model_choice)
+            target_feature = st.selectbox("Select target feature",[None] + list(dataset.columns) , index=None,placeholder="Slect")
+
+        if ml_task is not None:
+            render_model_comparison(dataset, target_feature, task_type="Regression")
+
+
 
         # Automodel
         if model_choice == "All Models":
@@ -79,13 +94,16 @@ def train_model(dataset):
             decisionTreeRegression.run_decision_tree(dataset, target_feature)
 
     if ml_task == "Classification":
-        model_choice = st.selectbox("Select Model", ["Choose","Binary Classification","Multiclass Classification", "Logistic Regression", "K-Nearest Neighbors", "Support Vector Machine", "Naive Bayes", "Decision Tree Classifier"])
+        model_choice = st.selectbox("Select Model", ["Binary Classification","Multiclass Classification", "Logistic Regression", "K-Nearest Neighbors", "Support Vector Machine", "Naive Bayes", "Decision Tree Classifier"],index=None,placeholder="Choose Model")
 
-        target_feature = "Select"
+        target_feature = None
 
-        if model_choice != "Choose":
-           
-            target_feature = st.selectbox("Select target feature", ["Select" ]+ list(dataset.columns))
+        if model_choice != None:
+            guidanceButton.render_info_button(ml_task,model_choice)
+            target_feature = st.selectbox("Select target feature", [None]+ list(dataset.columns),index=None,placeholder="Select")
+        
+        if target_feature is not None:
+            render_model_comparison(dataset, target_feature, task_type="Classification")
 
         # Automodel
         if model_choice == "Binary Classification" or model_choice == "Multiclass Classification":

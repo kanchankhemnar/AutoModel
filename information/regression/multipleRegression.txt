@@ -1,0 +1,11 @@
+# :abacus: Multiple Linear Regression
+
+An extension of linear regression involving multiple input variables.
+
+Example:
+- Predicting salary based on experience, education, and age
+
+Important assumptions:
+- Linearity
+- Independence
+- Homoscedasticity

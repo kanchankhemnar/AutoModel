@@ -31,3 +31,4 @@ def run_naive_bayes(dataset, target_col):
 
     # Show + Save report
     classificationReport.generate_classification_report(y_test, y_pred)
+    return y_test, y_pred

@@ -1,0 +1,12 @@
+# :evergreen_tree: Random Forest Regression
+
+Random Forest is an ensemble model using many decision trees to make a prediction.
+
+Benefits:
+- Handles non-linear relationships
+- Reduces overfitting
+- Works well with both numeric and categorical data
+
+Drawbacks:
+- Less interpretable
+- Slower for large forests

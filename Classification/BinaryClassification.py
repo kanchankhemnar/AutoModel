@@ -29,3 +29,4 @@ def run_binary_classification(dataset, target_col):
 
     # Show + Save report
     classificationReport.generate_classification_report(y_test, y_pred)
+    return y_test, y_pred

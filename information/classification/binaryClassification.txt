@@ -1,0 +1,16 @@
+#  Binary Classification
+
+Binary classification is used when the target variable has exactly two classes.
+
+Examples:
+- Yes / No
+- 0 / 1
+- Spam / Not Spam
+
+It is one of the most common ML tasks.
+
+Algorithms that work well:
+- Logistic Regression
+- Decision Tree
+- SVM
+- Naive Bayes

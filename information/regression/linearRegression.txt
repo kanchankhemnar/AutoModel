@@ -1,0 +1,10 @@
+# :straight_ruler: Linear Regression
+
+Linear Regression models the relationship between a target variable and one or more features using a straight line.
+
+Used for:
+- Predicting numeric values with linear trends
+
+Metrics:
+- RMSE (Root Mean Squared Error)
+- R2 Score (Coefficient of Determination)

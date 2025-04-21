@@ -22,4 +22,4 @@ def run_linear_regression(dataset, target_col):
     y_pred = model.predict(X_test)
     regressionReport.regression_report(y_test, y_pred)
     save_model(model)
-
+    return y_test, y_pred

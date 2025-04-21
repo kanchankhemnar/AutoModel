@@ -1,0 +1,11 @@
+# :straight_ruler: Logistic Regression
+
+Despite the name, logistic regression is used for classification tasks.
+
+How it works:
+- Uses a sigmoid function to estimate probabilities
+- Outputs class label based on threshold
+
+Suitable for:
+- Binary classification
+- Interpretable models

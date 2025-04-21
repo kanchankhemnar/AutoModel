@@ -1,0 +1,12 @@
+# :deciduous_tree: Decision Tree Classifier
+
+Decision Trees split the dataset into branches using conditions based on feature values.
+
+Good for:
+- Interpretable models
+- Small to medium datasets
+
+Key terms:
+- Gini Impurity / Entropy
+- Depth, Leaf Nodes
+- Pruning to avoid overfitting

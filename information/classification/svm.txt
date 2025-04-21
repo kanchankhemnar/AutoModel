@@ -1,0 +1,12 @@
+# :vertical_traffic_light: Support Vector Machine (SVM)
+
+SVM is a powerful algorithm that finds the optimal boundary (hyperplane) between classes.
+
+Good for:
+- High-dimensional data
+- Binary or multiclass classification
+
+Key points:
+- Works well when classes are separable
+- May struggle with noisy data
+- Supports different kernels (linear, RBF)

@@ -1,0 +1,11 @@
+# :mag: K-Nearest Neighbors (KNN)
+
+KNN classifies data based on the closest training examples in the feature space.
+
+Simple yet effective for:
+- Classification and regression
+- Low-dimensional, clean datasets
+
+Key parameters:
+- Number of neighbors (k)
+- Distance metric (Euclidean, Manhattan)

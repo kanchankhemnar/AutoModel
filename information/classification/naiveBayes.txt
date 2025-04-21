@@ -1,0 +1,12 @@
+# :open_book: Naive Bayes Classifier
+
+Naive Bayes is a probabilistic classifier based on Bayes' theorem with a strong (naive) assumption of feature independence.
+
+Best used for:
+- Text classification (spam detection, sentiment analysis)
+- Fast predictions on large datasets
+
+Variants:
+- Gaussian
+- Multinomial
+- Bernoulli
