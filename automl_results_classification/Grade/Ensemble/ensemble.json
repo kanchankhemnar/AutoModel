@@ -4,25 +4,17 @@
     "optimize_metric": "logloss",
     "selected_models": [
         {
-            "model": "14_LightGBM",
+            "model": "1_DecisionTree",
             "repeat": 1.0
         },
         {
-            "model": "19_DecisionTree",
+            "model": "5_Default_LightGBM_KMeansFeatures",
             "repeat": 2.0
-        },
-        {
-            "model": "1_DecisionTree",
-            "repeat": 3.0
-        },
-        {
-            "model": "20_LightGBM",
-            "repeat": 10.0
         }
     ],
     "predictions_fname": "Ensemble\\predictions_ensemble.csv",
     "metric_name": "logloss",
-    "final_loss": 1.3274248675991336,
-    "train_time": 1.6482882499694824,
+    "final_loss": 1.3176994171294365,
+    "train_time": 0.48795437812805176,
     "is_stacked": false
 }

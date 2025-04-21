@@ -16,4 +16,4 @@ def run_random_forest(dataset, target_col):
     y_pred = model.predict(X_test)
     regressionReport.regression_report(y_test, y_pred)
 
-    return y_test, y_pred
+    # return y_test, y_pred

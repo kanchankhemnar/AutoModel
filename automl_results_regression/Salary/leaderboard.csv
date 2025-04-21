@@ -1,0 +1,23 @@
+name,model_type,metric_type,metric_value,train_time
+1_DecisionTree,Decision Tree,rmse,3884.7316844817824,1.51
+2_DecisionTree,Decision Tree,rmse,4740.5423976274815,1.47
+3_DecisionTree,Decision Tree,rmse,4740.5423976274815,1.64
+4_Linear,Linear,rmse,4432.603099568351,1.7
+5_Default_LightGBM,LightGBM,rmse,9620.19511841484,1.51
+6_Default_Xgboost,Xgboost,rmse,6692.649201683291,1.98
+7_Default_CatBoost,CatBoost,rmse,5815.153378356905,2.05
+8_Default_NeuralNetwork,Neural Network,rmse,6167.520850962528,1.64
+18_LightGBM,LightGBM,rmse,27811.296123776527,1.64
+9_Xgboost,Xgboost,rmse,5155.62755279114,2.11
+27_CatBoost,CatBoost,rmse,5271.905764235308,2.08
+36_RandomForest,Random Forest,rmse,23741.910341520866,2.55
+45_ExtraTrees,Extra Trees,rmse,9472.401274196489,2.94
+54_NeuralNetwork,Neural Network,rmse,4626.778513698375,1.73
+1_DecisionTree_KMeansFeatures,Decision Tree,rmse,3884.7316844817824,1.8
+4_Linear_KMeansFeatures,Linear,rmse,4667.484778799454,1.83
+55_DecisionTree,Decision Tree,rmse,3884.7316844817824,1.65
+56_DecisionTree,Decision Tree,rmse,3884.7316844817824,1.86
+57_NeuralNetwork,Neural Network,rmse,5077.90305767386,2.01
+58_DecisionTree,Decision Tree,rmse,3927.3177156934985,1.67
+59_DecisionTree,Decision Tree,rmse,3927.3177156934985,1.69
+Ensemble,Ensemble,rmse,3511.785470440395,2.47

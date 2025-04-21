@@ -33,6 +33,9 @@ def get_info_filename(model_choice, inner_model_choice):
         if inner_model_choice == "Linear Regression":
             return "regression/linearRegression.txt"
         
+        elif inner_model_choice == "All Models":
+            return "regression/mljarRegression.txt"
+
         elif inner_model_choice == "Multiple Regression":
             return "regression/multipleRegression.txt"
         
@@ -78,6 +81,7 @@ def render_info_button(model_choice, inner_model_choice):
         "regression/decisionTreeRegression.txt": "Read about Decision Tree Regression",
         "regression/randomForestRegression.txt": "Read about Random Forest",
         "regression/polynomialRegression.txt": "Read about Polynomial Regression",
+        "regression/mljarRegression.txt" :"Read about MLJAR AutoML"
 
     }
     button_label = label_map.get(filename, "Read Info")

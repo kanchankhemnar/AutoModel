@@ -1,5 +1,5 @@
 {
-    "uid": "d03478de-1b4a-424f-b882-d34b20ff8a86",
+    "uid": "816ff703-03bb-490c-8641-f7758c3cee4b",
     "name": "3_DecisionTree",
     "preprocessing": [
         {
@@ -144,7 +144,7 @@
             "library_version": "1.5.2",
             "algorithm_name": "Decision Tree",
             "algorithm_short_name": "Decision Tree",
-            "uid": "c698a56b-3d5a-40de-ae40-4cb87601df2e",
+            "uid": "fed2cf7c-b0ab-417b-90b3-10be424c8ee9",
             "params": {
                 "model_type": "Decision Tree",
                 "ml_task": "multiclass_classification",
@@ -244,7 +244,7 @@
     "predictions_fname": "3_DecisionTree\\predictions_validation.csv",
     "metric_name": "logloss",
     "final_loss": "4.040112191623302",
-    "train_time": 0.6821446418762207,
+    "train_time": 1.4412755966186523,
     "is_stacked": false,
     "joblib_version": "1.3.2"
 }

@@ -27,7 +27,7 @@ logloss
 
 ## Training time
 
-2.3 seconds
+13.0 seconds
 
 ### Metric details
 |           |   AA |       BA |   BB |       CB |   CC |   DC |   DD |   Fail |   accuracy |   macro avg |   weighted avg |   logloss |

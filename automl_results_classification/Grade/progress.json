@@ -15,7 +15,9 @@
             "features_selection",
             "hill_climbing_1",
             "hill_climbing_2",
+            "boost_on_errors",
             "ensemble",
+            "stack",
             "ensemble_stacked"
         ],
         "algorithms": [
@@ -34,113 +36,71 @@
                 "model_name": "prepare_data",
                 "model_type": "prepare_data",
                 "fit_level": "prepare_data",
-                "train_time": 0.3022127151489258
+                "train_time": 0.5569906234741211
             },
             {
                 "model_name": "1_DecisionTree",
                 "model_type": "Decision Tree",
                 "fit_level": "adjust_validation",
-                "train_time": 0.8424971103668213
+                "train_time": 1.3431861400604248
             },
             {
                 "model_name": "2_DecisionTree",
                 "model_type": "Decision Tree",
                 "fit_level": "simple_algorithms",
-                "train_time": 0.6854856014251709
+                "train_time": 1.157257318496704
             },
             {
                 "model_name": "3_DecisionTree",
                 "model_type": "Decision Tree",
                 "fit_level": "simple_algorithms",
-                "train_time": 0.6821446418762207
+                "train_time": 1.4412755966186523
             },
             {
                 "model_name": "4_Linear",
                 "model_type": "Linear",
                 "fit_level": "simple_algorithms",
-                "train_time": 18.395900011062622
-            },
-            {
-                "model_name": "14_LightGBM",
-                "model_type": "LightGBM",
-                "fit_level": "not_so_random",
-                "train_time": 1.0278699398040771
+                "train_time": 4.823861837387085
             },
             {
                 "model_name": "5_Xgboost",
                 "model_type": "Xgboost",
                 "fit_level": "not_so_random",
-                "train_time": 1.4048683643341064
-            },
-            {
-                "model_name": "5_Xgboost_categorical_mix",
-                "model_type": "Xgboost",
-                "fit_level": "mix_encoding",
-                "train_time": 1.4675066471099854
+                "train_time": 1.9968299865722656
             },
             {
                 "model_name": "14_LightGBM_KMeansFeatures",
                 "model_type": "LightGBM",
                 "fit_level": "kmeans_features",
-                "train_time": 2.311927318572998
-            },
-            {
-                "model_name": "15_LightGBM",
-                "model_type": "LightGBM",
-                "fit_level": "hill_climbing_1",
-                "train_time": 1.0319125652313232
-            },
-            {
-                "model_name": "16_LightGBM",
-                "model_type": "LightGBM",
-                "fit_level": "hill_climbing_1",
-                "train_time": 0.526160717010498
-            },
-            {
-                "model_name": "17_Xgboost",
-                "model_type": "Xgboost",
-                "fit_level": "hill_climbing_1",
-                "train_time": 0.7741444110870361
-            },
-            {
-                "model_name": "18_Xgboost",
-                "model_type": "Xgboost",
-                "fit_level": "hill_climbing_1",
-                "train_time": 0.6668441295623779
-            },
-            {
-                "model_name": "19_DecisionTree",
-                "model_type": "Decision Tree",
-                "fit_level": "hill_climbing_1",
-                "train_time": 0.46004271507263184
-            },
-            {
-                "model_name": "20_LightGBM",
-                "model_type": "LightGBM",
-                "fit_level": "hill_climbing_2",
-                "train_time": 0.8612871170043945
-            },
-            {
-                "model_name": "21_LightGBM",
-                "model_type": "LightGBM",
-                "fit_level": "hill_climbing_2",
-                "train_time": 0.874305248260498
-            },
-            {
-                "model_name": "22_LightGBM",
-                "model_type": "LightGBM",
-                "fit_level": "hill_climbing_2",
-                "train_time": 0.7886667251586914
+                "train_time": 12.954522848129272
             },
             {
                 "model_name": "Ensemble",
                 "model_type": "Ensemble",
                 "fit_level": "ensemble",
-                "train_time": 1.6482882499694824
+                "train_time": 0.410938024520874
+            },
+            {
+                "model_name": "5_Xgboost_Stacked",
+                "model_type": "Xgboost",
+                "fit_level": "stack",
+                "train_time": 1.210146427154541
+            },
+            {
+                "model_name": "14_LightGBM_Stacked",
+                "model_type": "LightGBM",
+                "fit_level": "stack",
+                "train_time": 0.4623422622680664
+            },
+            {
+                "model_name": "Ensemble_Stacked",
+                "model_type": "Ensemble",
+                "fit_level": "ensemble_stacked",
+                "train_time": 0.5244846343994141
             }
         ],
         "is_hill_climbing": true,
-        "is_stacking": false
+        "is_stacking": true
     },
     "all_params": {
         "adjust_validation": [
@@ -218,9 +178,9 @@
                 "ml_task": "multiclass_classification",
                 "explain_level": 0,
                 "name": "1_DecisionTree",
-                "status": "trained",
-                "final_loss": 1.7298833203827746,
-                "train_time": 2.6939024925231934,
+                "status": "error",
+                "final_loss": null,
+                "train_time": null,
                 "data_type": "original",
                 "max_time_for_learner": 60
             }
@@ -302,7 +262,7 @@
                 "name": "2_DecisionTree",
                 "status": "trained",
                 "final_loss": 4.040112191623302,
-                "train_time": 2.074406862258911,
+                "train_time": 5.295902252197266,
                 "data_type": "original",
                 "max_time_for_learner": 60
             },
@@ -382,7 +342,7 @@
                 "name": "3_DecisionTree",
                 "status": "trained",
                 "final_loss": 4.040112191623302,
-                "train_time": 2.102470874786377,
+                "train_time": 5.350458860397339,
                 "data_type": "original",
                 "max_time_for_learner": 60
             },
@@ -481,7 +441,7 @@
                 "name": "4_Linear",
                 "status": "trained",
                 "final_loss": 1.960236706620192,
-                "train_time": 20.155680418014526,
+                "train_time": 7.471468448638916,
                 "data_type": "original",
                 "max_time_for_learner": 60
             }
@@ -566,9 +526,9 @@
                 "ml_task": "multiclass_classification",
                 "explain_level": 0,
                 "name": "14_LightGBM",
-                "status": "trained",
-                "final_loss": 1.6819907721783096,
-                "train_time": 2.6882519721984863,
+                "status": "error",
+                "final_loss": null,
+                "train_time": null,
                 "data_type": "original",
                 "max_time_for_learner": 60
             },
@@ -652,7 +612,7 @@
                 "name": "5_Xgboost",
                 "status": "trained",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original",
                 "max_time_for_learner": 60
             },
@@ -702,7 +662,7 @@
                 "name": "23_CatBoost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -785,7 +745,7 @@
                 "name": "32_RandomForest",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -866,7 +826,7 @@
                 "name": "41_ExtraTrees",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -965,7 +925,7 @@
                 "name": "50_NeuralNetwork",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -1063,7 +1023,7 @@
                 "name": "59_NearestNeighbors",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -1146,7 +1106,7 @@
                 "name": "15_LightGBM",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -1228,7 +1188,7 @@
                 "name": "6_Xgboost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -1277,7 +1237,7 @@
                 "name": "24_CatBoost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -1360,7 +1320,7 @@
                 "name": "33_RandomForest",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -1441,7 +1401,7 @@
                 "name": "42_ExtraTrees",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -1540,7 +1500,7 @@
                 "name": "51_NeuralNetwork",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -1638,7 +1598,7 @@
                 "name": "60_NearestNeighbors",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -1721,7 +1681,7 @@
                 "name": "16_LightGBM",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -1803,7 +1763,7 @@
                 "name": "7_Xgboost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -1852,7 +1812,7 @@
                 "name": "25_CatBoost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -1935,7 +1895,7 @@
                 "name": "34_RandomForest",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -2016,7 +1976,7 @@
                 "name": "43_ExtraTrees",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -2115,7 +2075,7 @@
                 "name": "52_NeuralNetwork",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -2213,7 +2173,7 @@
                 "name": "61_NearestNeighbors",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -2296,7 +2256,7 @@
                 "name": "17_LightGBM",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -2378,7 +2338,7 @@
                 "name": "8_Xgboost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -2427,7 +2387,7 @@
                 "name": "26_CatBoost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -2510,7 +2470,7 @@
                 "name": "35_RandomForest",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -2591,7 +2551,7 @@
                 "name": "44_ExtraTrees",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -2690,7 +2650,7 @@
                 "name": "53_NeuralNetwork",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -2788,7 +2748,7 @@
                 "name": "62_NearestNeighbors",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -2871,7 +2831,7 @@
                 "name": "18_LightGBM",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -2953,7 +2913,7 @@
                 "name": "9_Xgboost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -3002,7 +2962,7 @@
                 "name": "27_CatBoost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -3085,7 +3045,7 @@
                 "name": "36_RandomForest",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -3166,7 +3126,7 @@
                 "name": "45_ExtraTrees",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -3265,7 +3225,7 @@
                 "name": "54_NeuralNetwork",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -3363,7 +3323,7 @@
                 "name": "63_NearestNeighbors",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -3446,7 +3406,7 @@
                 "name": "19_LightGBM",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -3528,7 +3488,7 @@
                 "name": "10_Xgboost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -3577,7 +3537,7 @@
                 "name": "28_CatBoost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -3660,7 +3620,7 @@
                 "name": "37_RandomForest",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -3741,7 +3701,7 @@
                 "name": "46_ExtraTrees",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -3840,7 +3800,7 @@
                 "name": "55_NeuralNetwork",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -3938,7 +3898,7 @@
                 "name": "64_NearestNeighbors",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -4021,7 +3981,7 @@
                 "name": "20_LightGBM",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -4103,7 +4063,7 @@
                 "name": "11_Xgboost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -4152,7 +4112,7 @@
                 "name": "29_CatBoost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -4235,7 +4195,7 @@
                 "name": "38_RandomForest",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -4316,7 +4276,7 @@
                 "name": "47_ExtraTrees",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -4415,7 +4375,7 @@
                 "name": "56_NeuralNetwork",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -4513,7 +4473,7 @@
                 "name": "65_NearestNeighbors",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -4596,7 +4556,7 @@
                 "name": "21_LightGBM",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -4678,7 +4638,7 @@
                 "name": "12_Xgboost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -4727,7 +4687,7 @@
                 "name": "30_CatBoost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -4810,7 +4770,7 @@
                 "name": "39_RandomForest",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -4891,7 +4851,7 @@
                 "name": "48_ExtraTrees",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -4990,7 +4950,7 @@
                 "name": "57_NeuralNetwork",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -5088,7 +5048,7 @@
                 "name": "66_NearestNeighbors",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -5171,7 +5131,7 @@
                 "name": "22_LightGBM",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -5253,7 +5213,7 @@
                 "name": "13_Xgboost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -5302,7 +5262,7 @@
                 "name": "31_CatBoost",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -5385,7 +5345,7 @@
                 "name": "40_RandomForest",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -5466,7 +5426,7 @@
                 "name": "49_ExtraTrees",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -5565,7 +5525,7 @@
                 "name": "58_NeuralNetwork",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
             },
             {
@@ -5663,94 +5623,8 @@
                 "name": "67_NearestNeighbors",
                 "status": "skipped",
                 "final_loss": 1.701272771556551,
-                "train_time": 3.2315456867218018,
+                "train_time": 3.7434730529785156,
                 "data_type": "original"
-            }
-        ],
-        "mix_encoding": [
-            {
-                "additional": {
-                    "max_rounds": 10000,
-                    "early_stopping_rounds": 50,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_onehot"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_onehot"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_onehot"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_onehot"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_onehot"
-                        ],
-                        "Transportation": [
-                            "categorical_to_onehot"
-                        ],
-                        "Attendance": [
-                            "categorical_to_onehot"
-                        ],
-                        "Reading": [
-                            "categorical_to_onehot"
-                        ],
-                        "Notes": [
-                            "categorical_to_onehot"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_onehot"
-                        ],
-                        "Project_work": [
-                            "categorical_to_onehot"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification"
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "Xgboost",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1235,
-                    "objective": "multi:softprob",
-                    "eta": 0.075,
-                    "max_depth": 8,
-                    "min_child_weight": 5,
-                    "subsample": 1.0,
-                    "colsample_bytree": 1.0,
-                    "eval_metric": "mlogloss",
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "5_Xgboost_categorical_mix",
-                "status": "trained",
-                "final_loss": 1.730699924906354,
-                "train_time": 3.524792432785034,
-                "data_type": "original_categorical_mix",
-                "max_time_for_learner": 60
             }
         ],
         "kmeans_features": [
@@ -5838,7 +5712,7 @@
                 "name": "14_LightGBM_KMeansFeatures",
                 "status": "trained",
                 "final_loss": 1.5011230248651728,
-                "train_time": 3.238239049911499,
+                "train_time": 15.370954990386963,
                 "data_type": "original_kmeans_features",
                 "max_time_for_learner": 60
             },
@@ -5925,7 +5799,7 @@
                 "name": "5_Xgboost_KMeansFeatures",
                 "status": "skipped",
                 "final_loss": 1.5011230248651728,
-                "train_time": 3.238239049911499,
+                "train_time": 15.370954990386963,
                 "data_type": "original_kmeans_features",
                 "max_time_for_learner": 60
             },
@@ -6008,12 +5882,111 @@
                 "name": "1_DecisionTree_KMeansFeatures",
                 "status": "skipped",
                 "final_loss": 1.5011230248651728,
-                "train_time": 3.238239049911499,
+                "train_time": 15.370954990386963,
                 "data_type": "original_kmeans_features",
                 "max_time_for_learner": 60
             }
         ],
-        "hill_climbing_1": [
+        "boost_on_errors": [
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "Sex": [
+                            "categorical_to_int"
+                        ],
+                        "High_School_Type": [
+                            "categorical_to_int"
+                        ],
+                        "Scholarship": [
+                            "na_fill_median",
+                            "categorical_to_int"
+                        ],
+                        "Additional_Work": [
+                            "categorical_to_int"
+                        ],
+                        "Sports_activity": [
+                            "categorical_to_int"
+                        ],
+                        "Transportation": [
+                            "categorical_to_int"
+                        ],
+                        "Attendance": [
+                            "categorical_to_int"
+                        ],
+                        "Reading": [
+                            "categorical_to_int"
+                        ],
+                        "Notes": [
+                            "categorical_to_int"
+                        ],
+                        "Listening_in_Class": [
+                            "categorical_to_int"
+                        ],
+                        "Project_work": [
+                            "categorical_to_int"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "multiclass_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.9,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "automl_results_classification\\Grade\\X.data",
+                    "y_path": "automl_results_classification\\Grade\\y.data",
+                    "results_path": "automl_results_classification\\Grade",
+                    "sample_weight_path": "automl_results_classification\\Grade\\14_LightGBM_sample_weight.data"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "multiclass_classification",
+                    "n_jobs": -1,
+                    "seed": 1235,
+                    "objective": "multiclass",
+                    "num_leaves": 15,
+                    "learning_rate": 0.05,
+                    "feature_fraction": 0.8,
+                    "bagging_fraction": 0.5,
+                    "min_data_in_leaf": 50,
+                    "metric": "multi_logloss",
+                    "custom_eval_metric_name": null,
+                    "num_class": 8,
+                    "explain_level": 0
+                },
+                "automl_random_state": 1234,
+                "ml_task": "multiclass_classification",
+                "explain_level": 0,
+                "name": "14_LightGBM_BoostOnErrors",
+                "status": "error",
+                "final_loss": null,
+                "train_time": null,
+                "data_type": "boost_on_error",
+                "max_time_for_learner": 60,
+                "injected_sample_weight": true
+            }
+        ],
+        "ensemble": [
+            {
+                "model_type": "ensemble",
+                "is_stacked": false,
+                "name": "Ensemble",
+                "status": "trained",
+                "final_loss": 1.377681914278265,
+                "train_time": 0.410938024520874
+            }
+        ],
+        "stack": [
             {
                 "additional": {
                     "max_rounds": 10000,
@@ -6072,758 +6045,7 @@
                     "train_ratio": 0.9,
                     "shuffle": true,
                     "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "LightGBM",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1235,
-                    "objective": "multiclass",
-                    "num_leaves": 31,
-                    "learning_rate": 0.05,
-                    "feature_fraction": 0.8,
-                    "bagging_fraction": 0.5,
-                    "min_data_in_leaf": 50,
-                    "metric": "multi_logloss",
-                    "custom_eval_metric_name": null,
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "15_LightGBM",
-                "status": "trained",
-                "final_loss": 1.5011230248651728,
-                "train_time": 1.9270029067993164,
-                "data_type": "original_kmeans_features",
-                "max_time_for_learner": 60
-            },
-            {
-                "additional": {
-                    "max_rounds": 10000,
-                    "early_stopping_rounds": 50,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_int"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_int"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_int"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_int"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_int"
-                        ],
-                        "Transportation": [
-                            "categorical_to_int"
-                        ],
-                        "Attendance": [
-                            "categorical_to_int"
-                        ],
-                        "Reading": [
-                            "categorical_to_int"
-                        ],
-                        "Notes": [
-                            "categorical_to_int"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_int"
-                        ],
-                        "Project_work": [
-                            "categorical_to_int"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification"
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "LightGBM",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1235,
-                    "objective": "multiclass",
-                    "num_leaves": 31,
-                    "learning_rate": 0.05,
-                    "feature_fraction": 0.8,
-                    "bagging_fraction": 0.5,
-                    "min_data_in_leaf": 50,
-                    "metric": "multi_logloss",
-                    "custom_eval_metric_name": null,
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "16_LightGBM",
-                "status": "trained",
-                "final_loss": 1.6819907721783096,
-                "train_time": 1.3291666507720947,
-                "data_type": "original",
-                "max_time_for_learner": 60
-            },
-            {
-                "additional": {
-                    "max_rounds": 10000,
-                    "early_stopping_rounds": 50,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_int"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_int"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_int"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_int"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_int"
-                        ],
-                        "Transportation": [
-                            "categorical_to_int"
-                        ],
-                        "Attendance": [
-                            "categorical_to_int"
-                        ],
-                        "Reading": [
-                            "categorical_to_int"
-                        ],
-                        "Notes": [
-                            "categorical_to_int"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_int"
-                        ],
-                        "Project_work": [
-                            "categorical_to_int"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification"
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "Xgboost",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1235,
-                    "objective": "multi:softprob",
-                    "eta": 0.05,
-                    "max_depth": 8,
-                    "min_child_weight": 5,
-                    "subsample": 1.0,
-                    "colsample_bytree": 1.0,
-                    "eval_metric": "mlogloss",
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "17_Xgboost",
-                "status": "trained",
-                "final_loss": 1.7048868961300918,
-                "train_time": 1.5707223415374756,
-                "data_type": "original",
-                "max_time_for_learner": 60
-            },
-            {
-                "additional": {
-                    "max_rounds": 10000,
-                    "early_stopping_rounds": 50,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_int"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_int"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_int"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_int"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_int"
-                        ],
-                        "Transportation": [
-                            "categorical_to_int"
-                        ],
-                        "Attendance": [
-                            "categorical_to_int"
-                        ],
-                        "Reading": [
-                            "categorical_to_int"
-                        ],
-                        "Notes": [
-                            "categorical_to_int"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_int"
-                        ],
-                        "Project_work": [
-                            "categorical_to_int"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification"
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "Xgboost",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1235,
-                    "objective": "multi:softprob",
-                    "eta": 0.1,
-                    "max_depth": 8,
-                    "min_child_weight": 5,
-                    "subsample": 1.0,
-                    "colsample_bytree": 1.0,
-                    "eval_metric": "mlogloss",
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "18_Xgboost",
-                "status": "trained",
-                "final_loss": 1.7109145711372633,
-                "train_time": 1.4515290260314941,
-                "data_type": "original",
-                "max_time_for_learner": 60
-            },
-            {
-                "additional": {
-                    "trees_in_step": 1,
-                    "train_cant_improve_limit": 0,
-                    "max_steps": 1,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_int"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_int"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_int"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_int"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_int"
-                        ],
-                        "Transportation": [
-                            "categorical_to_int"
-                        ],
-                        "Attendance": [
-                            "categorical_to_int"
-                        ],
-                        "Reading": [
-                            "categorical_to_int"
-                        ],
-                        "Notes": [
-                            "categorical_to_int"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_int"
-                        ],
-                        "Project_work": [
-                            "categorical_to_int"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification"
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "Decision Tree",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1235,
-                    "criterion": "entropy",
-                    "max_depth": 3,
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "19_DecisionTree",
-                "status": "trained",
-                "final_loss": 2.1685965149248676,
-                "train_time": 1.146127462387085,
-                "data_type": "original",
-                "max_time_for_learner": 60
-            },
-            {
-                "additional": {
-                    "max_rounds": 10000,
-                    "early_stopping_rounds": 50,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_onehot"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_onehot"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_onehot"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_onehot"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_onehot"
-                        ],
-                        "Transportation": [
-                            "categorical_to_onehot"
-                        ],
-                        "Attendance": [
-                            "categorical_to_onehot"
-                        ],
-                        "Reading": [
-                            "categorical_to_onehot"
-                        ],
-                        "Notes": [
-                            "categorical_to_onehot"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_onehot"
-                        ],
-                        "Project_work": [
-                            "categorical_to_onehot"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification"
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "Xgboost",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1235,
-                    "objective": "multi:softprob",
-                    "eta": 0.05,
-                    "max_depth": 8,
-                    "min_child_weight": 5,
-                    "subsample": 1.0,
-                    "colsample_bytree": 1.0,
-                    "eval_metric": "mlogloss",
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "20_Xgboost",
-                "status": "skipped",
-                "final_loss": 2.1685965149248676,
-                "train_time": 1.146127462387085,
-                "data_type": "original_categorical_mix",
-                "max_time_for_learner": 60
-            },
-            {
-                "additional": {
-                    "max_rounds": 10000,
-                    "early_stopping_rounds": 50,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_onehot"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_onehot"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_onehot"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_onehot"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_onehot"
-                        ],
-                        "Transportation": [
-                            "categorical_to_onehot"
-                        ],
-                        "Attendance": [
-                            "categorical_to_onehot"
-                        ],
-                        "Reading": [
-                            "categorical_to_onehot"
-                        ],
-                        "Notes": [
-                            "categorical_to_onehot"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_onehot"
-                        ],
-                        "Project_work": [
-                            "categorical_to_onehot"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification"
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "Xgboost",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1235,
-                    "objective": "multi:softprob",
-                    "eta": 0.1,
-                    "max_depth": 8,
-                    "min_child_weight": 5,
-                    "subsample": 1.0,
-                    "colsample_bytree": 1.0,
-                    "eval_metric": "mlogloss",
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "21_Xgboost",
-                "status": "skipped",
-                "final_loss": 2.1685965149248676,
-                "train_time": 1.146127462387085,
-                "data_type": "original_categorical_mix",
-                "max_time_for_learner": 60
-            },
-            {
-                "additional": {
-                    "trees_in_step": 1,
-                    "train_cant_improve_limit": 0,
-                    "max_steps": 1,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_int"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_int"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_int"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_int"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_int"
-                        ],
-                        "Transportation": [
-                            "categorical_to_int"
-                        ],
-                        "Attendance": [
-                            "categorical_to_int"
-                        ],
-                        "Reading": [
-                            "categorical_to_int"
-                        ],
-                        "Notes": [
-                            "categorical_to_int"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_int"
-                        ],
-                        "Project_work": [
-                            "categorical_to_int"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification"
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "Decision Tree",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1236,
-                    "criterion": "entropy",
-                    "max_depth": 4,
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "22_DecisionTree",
-                "status": "skipped",
-                "final_loss": 2.1685965149248676,
-                "train_time": 1.146127462387085,
-                "data_type": "original",
-                "max_time_for_learner": 60
-            },
-            {
-                "additional": {
-                    "trees_in_step": 1,
-                    "train_cant_improve_limit": 0,
-                    "max_steps": 1,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_int"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_int"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_int"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_int"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_int"
-                        ],
-                        "Transportation": [
-                            "categorical_to_int"
-                        ],
-                        "Attendance": [
-                            "categorical_to_int"
-                        ],
-                        "Reading": [
-                            "categorical_to_int"
-                        ],
-                        "Notes": [
-                            "categorical_to_int"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_int"
-                        ],
-                        "Project_work": [
-                            "categorical_to_int"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification"
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "Decision Tree",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1237,
-                    "criterion": "entropy",
-                    "max_depth": 4,
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "23_DecisionTree",
-                "status": "skipped",
-                "final_loss": 2.1685965149248676,
-                "train_time": 1.146127462387085,
-                "data_type": "original",
-                "max_time_for_learner": 60
-            }
-        ],
-        "hill_climbing_2": [
-            {
-                "additional": {
-                    "max_rounds": 10000,
-                    "early_stopping_rounds": 50,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_int"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_int"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_int"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_int"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_int"
-                        ],
-                        "Transportation": [
-                            "categorical_to_int"
-                        ],
-                        "Attendance": [
-                            "categorical_to_int"
-                        ],
-                        "Reading": [
-                            "categorical_to_int"
-                        ],
-                        "Notes": [
-                            "categorical_to_int"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_int"
-                        ],
-                        "Project_work": [
-                            "categorical_to_int"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification",
-                    "kmeans_features": {
-                        "results_path": "automl_results_classification\\Grade"
-                    }
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
+                    "X_path": "automl_results_classification\\Grade\\X_stacked.data",
                     "y_path": "automl_results_classification\\Grade\\y.data",
                     "results_path": "automl_results_classification\\Grade"
                 },
@@ -6837,7 +6059,7 @@
                     "learning_rate": 0.05,
                     "feature_fraction": 0.8,
                     "bagging_fraction": 0.5,
-                    "min_data_in_leaf": 30,
+                    "min_data_in_leaf": 50,
                     "metric": "multi_logloss",
                     "custom_eval_metric_name": null,
                     "num_class": 8,
@@ -6846,100 +6068,13 @@
                 "automl_random_state": 1234,
                 "ml_task": "multiclass_classification",
                 "explain_level": 0,
-                "name": "20_LightGBM",
-                "status": "trained",
-                "final_loss": 1.4114436181872236,
-                "train_time": 1.6488478183746338,
-                "data_type": "original_kmeans_features",
-                "max_time_for_learner": 60
-            },
-            {
-                "additional": {
-                    "max_rounds": 10000,
-                    "early_stopping_rounds": 50,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_int"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_int"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_int"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_int"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_int"
-                        ],
-                        "Transportation": [
-                            "categorical_to_int"
-                        ],
-                        "Attendance": [
-                            "categorical_to_int"
-                        ],
-                        "Reading": [
-                            "categorical_to_int"
-                        ],
-                        "Notes": [
-                            "categorical_to_int"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_int"
-                        ],
-                        "Project_work": [
-                            "categorical_to_int"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification",
-                    "kmeans_features": {
-                        "results_path": "automl_results_classification\\Grade"
-                    }
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "LightGBM",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1235,
-                    "objective": "multiclass",
-                    "num_leaves": 31,
-                    "learning_rate": 0.05,
-                    "feature_fraction": 0.8,
-                    "bagging_fraction": 0.5,
-                    "min_data_in_leaf": 30,
-                    "metric": "multi_logloss",
-                    "custom_eval_metric_name": null,
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "21_LightGBM",
-                "status": "trained",
-                "final_loss": 1.4114436181872236,
-                "train_time": 1.6453044414520264,
-                "data_type": "original_kmeans_features",
-                "max_time_for_learner": 60
+                "name": "14_LightGBM_KMeansFeatures_Stacked",
+                "status": "error",
+                "final_loss": null,
+                "train_time": null,
+                "data_type": "original_kmeans_features_stacked",
+                "max_time_for_learner": 60,
+                "is_stacked": true
             },
             {
                 "additional": {
@@ -6996,92 +6131,7 @@
                     "train_ratio": 0.9,
                     "shuffle": true,
                     "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "LightGBM",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1235,
-                    "objective": "multiclass",
-                    "num_leaves": 15,
-                    "learning_rate": 0.05,
-                    "feature_fraction": 0.8,
-                    "bagging_fraction": 0.5,
-                    "min_data_in_leaf": 30,
-                    "metric": "multi_logloss",
-                    "custom_eval_metric_name": null,
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "22_LightGBM",
-                "status": "trained",
-                "final_loss": 1.4545974362296665,
-                "train_time": 1.5506157875061035,
-                "data_type": "original",
-                "max_time_for_learner": 60
-            },
-            {
-                "additional": {
-                    "max_rounds": 10000,
-                    "early_stopping_rounds": 50,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_int"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_int"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_int"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_int"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_int"
-                        ],
-                        "Transportation": [
-                            "categorical_to_int"
-                        ],
-                        "Attendance": [
-                            "categorical_to_int"
-                        ],
-                        "Reading": [
-                            "categorical_to_int"
-                        ],
-                        "Notes": [
-                            "categorical_to_int"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_int"
-                        ],
-                        "Project_work": [
-                            "categorical_to_int"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification"
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
+                    "X_path": "automl_results_classification\\Grade\\X_stacked.data",
                     "y_path": "automl_results_classification\\Grade\\y.data",
                     "results_path": "automl_results_classification\\Grade"
                 },
@@ -7095,7 +6145,7 @@
                     "max_depth": 8,
                     "min_child_weight": 5,
                     "subsample": 1.0,
-                    "colsample_bytree": 0.9,
+                    "colsample_bytree": 1.0,
                     "eval_metric": "mlogloss",
                     "num_class": 8,
                     "explain_level": 0
@@ -7103,12 +6153,13 @@
                 "automl_random_state": 1234,
                 "ml_task": "multiclass_classification",
                 "explain_level": 0,
-                "name": "23_Xgboost",
-                "status": "skipped",
-                "final_loss": 1.4545974362296665,
-                "train_time": 1.5506157875061035,
-                "data_type": "original",
-                "max_time_for_learner": 60
+                "name": "5_Xgboost_Stacked",
+                "status": "trained",
+                "final_loss": 1.701272771556551,
+                "train_time": 2.5792088508605957,
+                "data_type": "original_stacked",
+                "max_time_for_learner": 60,
+                "is_stacked": true
             },
             {
                 "additional": {
@@ -7165,368 +6216,46 @@
                     "train_ratio": 0.9,
                     "shuffle": true,
                     "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
+                    "X_path": "automl_results_classification\\Grade\\X_stacked.data",
                     "y_path": "automl_results_classification\\Grade\\y.data",
                     "results_path": "automl_results_classification\\Grade"
                 },
                 "learner": {
-                    "model_type": "Xgboost",
+                    "model_type": "LightGBM",
                     "ml_task": "multiclass_classification",
                     "n_jobs": -1,
                     "seed": 1235,
-                    "objective": "multi:softprob",
-                    "eta": 0.05,
-                    "max_depth": 8,
-                    "min_child_weight": 5,
-                    "subsample": 1.0,
-                    "colsample_bytree": 0.9,
-                    "eval_metric": "mlogloss",
+                    "objective": "multiclass",
+                    "num_leaves": 15,
+                    "learning_rate": 0.05,
+                    "feature_fraction": 0.8,
+                    "bagging_fraction": 0.5,
+                    "min_data_in_leaf": 50,
+                    "metric": "multi_logloss",
+                    "custom_eval_metric_name": null,
                     "num_class": 8,
                     "explain_level": 0
                 },
                 "automl_random_state": 1234,
                 "ml_task": "multiclass_classification",
                 "explain_level": 0,
-                "name": "24_Xgboost",
-                "status": "skipped",
-                "final_loss": 1.4545974362296665,
-                "train_time": 1.5506157875061035,
-                "data_type": "original",
-                "max_time_for_learner": 60
-            },
-            {
-                "additional": {
-                    "max_rounds": 10000,
-                    "early_stopping_rounds": 50,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_int"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_int"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_int"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_int"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_int"
-                        ],
-                        "Transportation": [
-                            "categorical_to_int"
-                        ],
-                        "Attendance": [
-                            "categorical_to_int"
-                        ],
-                        "Reading": [
-                            "categorical_to_int"
-                        ],
-                        "Notes": [
-                            "categorical_to_int"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_int"
-                        ],
-                        "Project_work": [
-                            "categorical_to_int"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification"
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "Xgboost",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1235,
-                    "objective": "multi:softprob",
-                    "eta": 0.1,
-                    "max_depth": 8,
-                    "min_child_weight": 5,
-                    "subsample": 1.0,
-                    "colsample_bytree": 0.9,
-                    "eval_metric": "mlogloss",
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "25_Xgboost",
-                "status": "skipped",
-                "final_loss": 1.4545974362296665,
-                "train_time": 1.5506157875061035,
-                "data_type": "original",
-                "max_time_for_learner": 60
-            },
-            {
-                "additional": {
-                    "trees_in_step": 1,
-                    "train_cant_improve_limit": 0,
-                    "max_steps": 1,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_int"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_int"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_int"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_int"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_int"
-                        ],
-                        "Transportation": [
-                            "categorical_to_int"
-                        ],
-                        "Attendance": [
-                            "categorical_to_int"
-                        ],
-                        "Reading": [
-                            "categorical_to_int"
-                        ],
-                        "Notes": [
-                            "categorical_to_int"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_int"
-                        ],
-                        "Project_work": [
-                            "categorical_to_int"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification"
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "Decision Tree",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1235,
-                    "criterion": "gini",
-                    "max_depth": 2,
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "26_DecisionTree",
-                "status": "skipped",
-                "final_loss": 1.4545974362296665,
-                "train_time": 1.5506157875061035,
-                "data_type": "original",
-                "max_time_for_learner": 60
-            },
-            {
-                "additional": {
-                    "trees_in_step": 1,
-                    "train_cant_improve_limit": 0,
-                    "max_steps": 1,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_int"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_int"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_int"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_int"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_int"
-                        ],
-                        "Transportation": [
-                            "categorical_to_int"
-                        ],
-                        "Attendance": [
-                            "categorical_to_int"
-                        ],
-                        "Reading": [
-                            "categorical_to_int"
-                        ],
-                        "Notes": [
-                            "categorical_to_int"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_int"
-                        ],
-                        "Project_work": [
-                            "categorical_to_int"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification"
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "Decision Tree",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1235,
-                    "criterion": "entropy",
-                    "max_depth": 2,
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "27_DecisionTree",
-                "status": "skipped",
-                "final_loss": 1.4545974362296665,
-                "train_time": 1.5506157875061035,
-                "data_type": "original",
-                "max_time_for_learner": 60
-            },
-            {
-                "additional": {
-                    "trees_in_step": 1,
-                    "train_cant_improve_limit": 0,
-                    "max_steps": 1,
-                    "max_rows_limit": null,
-                    "max_cols_limit": null
-                },
-                "preprocessing": {
-                    "columns_preprocessing": {
-                        "Sex": [
-                            "categorical_to_int"
-                        ],
-                        "High_School_Type": [
-                            "categorical_to_int"
-                        ],
-                        "Scholarship": [
-                            "na_fill_median",
-                            "categorical_to_int"
-                        ],
-                        "Additional_Work": [
-                            "categorical_to_int"
-                        ],
-                        "Sports_activity": [
-                            "categorical_to_int"
-                        ],
-                        "Transportation": [
-                            "categorical_to_int"
-                        ],
-                        "Attendance": [
-                            "categorical_to_int"
-                        ],
-                        "Reading": [
-                            "categorical_to_int"
-                        ],
-                        "Notes": [
-                            "categorical_to_int"
-                        ],
-                        "Listening_in_Class": [
-                            "categorical_to_int"
-                        ],
-                        "Project_work": [
-                            "categorical_to_int"
-                        ]
-                    },
-                    "target_preprocessing": [
-                        "na_exclude",
-                        "categorical_to_int"
-                    ],
-                    "ml_task": "multiclass_classification"
-                },
-                "validation_strategy": {
-                    "validation_type": "split",
-                    "train_ratio": 0.9,
-                    "shuffle": true,
-                    "stratify": true,
-                    "X_path": "automl_results_classification\\Grade\\X.data",
-                    "y_path": "automl_results_classification\\Grade\\y.data",
-                    "results_path": "automl_results_classification\\Grade"
-                },
-                "learner": {
-                    "model_type": "Decision Tree",
-                    "ml_task": "multiclass_classification",
-                    "n_jobs": -1,
-                    "seed": 1235,
-                    "criterion": "entropy",
-                    "max_depth": 4,
-                    "num_class": 8,
-                    "explain_level": 0
-                },
-                "automl_random_state": 1234,
-                "ml_task": "multiclass_classification",
-                "explain_level": 0,
-                "name": "28_DecisionTree",
-                "status": "skipped",
-                "final_loss": 1.4545974362296665,
-                "train_time": 1.5506157875061035,
-                "data_type": "original",
-                "max_time_for_learner": 60
+                "name": "14_LightGBM_Stacked",
+                "status": "trained",
+                "final_loss": 1.6819907721783096,
+                "train_time": 1.0686602592468262,
+                "data_type": "original_stacked",
+                "max_time_for_learner": 60,
+                "is_stacked": true
             }
         ],
-        "ensemble": [
+        "ensemble_stacked": [
             {
                 "model_type": "ensemble",
-                "is_stacked": false,
-                "name": "Ensemble",
+                "is_stacked": true,
+                "name": "Ensemble_Stacked",
                 "status": "trained",
-                "final_loss": 1.3274248675991336,
-                "train_time": 1.6482882499694824
+                "final_loss": 1.3776453131178041,
+                "train_time": 0.5244846343994141
             }
         ]
     },

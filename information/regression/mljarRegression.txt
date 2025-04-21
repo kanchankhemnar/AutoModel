@@ -1,0 +1,41 @@
+# :rocket: AutoML for Regression (MLJAR)
+
+MLJAR AutoML automates the full regression model lifecycle — from preprocessing to model training, tuning, and evaluation.
+
+---
+
+## :bar_chart: What It Does
+
+- Automatically detects data types & handles preprocessing
+- Trains multiple regression models like:
+  - Linear Regression
+  - Decision Tree
+  - Random Forest
+  - Extra Trees
+  - XGBoost / LightGBM (if supported)
+- Selects best model based on R² score and RMSE
+- Generates a detailed visual report with:
+  - Leaderboard
+  - Boxplots
+  - Residual plots
+  - Feature importance
+
+---
+
+## :bulb: When to Use
+
+- When you want quick model comparisons without manual tuning
+- To find the best baseline model before deeper optimization
+- When you're not sure which regression model will perform best
+
+---
+
+## :warning: Keep in Mind
+
+- MLJAR may skip unsupported models if libraries aren't installed
+- Not suitable for huge datasets (use cloud-based tools instead)
+- Works best with clean numeric data
+
+---
+
+AutoML saves time and gives solid insights — especially helpful for beginners and time-sensitive projects! 🚀

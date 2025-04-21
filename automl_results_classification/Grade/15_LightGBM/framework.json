@@ -1,5 +1,5 @@
 {
-    "uid": "c9bf06a4-a92c-4c8e-8653-93936190f243",
+    "uid": "9d200a03-4cb5-4e11-ac2b-ff59bf277d48",
     "name": "15_LightGBM",
     "preprocessing": [
         {
@@ -83,22 +83,6 @@
                     ]
                 }
             ],
-            "kmeans": {
-                "new_features": [
-                    "Dist_Cluster_0",
-                    "Dist_Cluster_1",
-                    "Dist_Cluster_2",
-                    "Dist_Cluster_3",
-                    "Cluster"
-                ],
-                "result_file": "15_LightGBM\\kmeans_fold_0.joblib",
-                "input_columns": [
-                    "Unnamed: 0",
-                    "Id",
-                    "Student_Age",
-                    "Weekly_Study_Hours"
-                ]
-            },
             "categorical_y": {
                 "AA": 0,
                 "BA": 1,
@@ -151,10 +135,7 @@
                     "na_exclude",
                     "categorical_to_int"
                 ],
-                "ml_task": "multiclass_classification",
-                "kmeans_features": {
-                    "results_path": "automl_results_classification\\Grade"
-                }
+                "ml_task": "multiclass_classification"
             }
         }
     ],
@@ -163,18 +144,18 @@
             "library_version": "4.6.0",
             "algorithm_name": "LightGBM",
             "algorithm_short_name": "LightGBM",
-            "uid": "7762069e-f40c-4146-8b2d-7911f0d0ad5d",
+            "uid": "89d5220d-0beb-4517-b36d-e215198c0468",
             "params": {
                 "model_type": "LightGBM",
                 "ml_task": "multiclass_classification",
                 "n_jobs": -1,
                 "seed": 1235,
                 "objective": "multiclass",
-                "num_leaves": 31,
+                "num_leaves": 15,
                 "learning_rate": 0.05,
                 "feature_fraction": 0.8,
                 "bagging_fraction": 0.5,
-                "min_data_in_leaf": 50,
+                "min_data_in_leaf": 30,
                 "metric": "multi_logloss",
                 "custom_eval_metric_name": null,
                 "num_class": 8,
@@ -231,10 +212,7 @@
                 "na_exclude",
                 "categorical_to_int"
             ],
-            "ml_task": "multiclass_classification",
-            "kmeans_features": {
-                "results_path": "automl_results_classification\\Grade"
-            }
+            "ml_task": "multiclass_classification"
         },
         "validation_strategy": {
             "validation_type": "split",
@@ -251,11 +229,11 @@
             "n_jobs": -1,
             "seed": 1235,
             "objective": "multiclass",
-            "num_leaves": 31,
+            "num_leaves": 15,
             "learning_rate": 0.05,
             "feature_fraction": 0.8,
             "bagging_fraction": 0.5,
-            "min_data_in_leaf": 50,
+            "min_data_in_leaf": 30,
             "metric": "multi_logloss",
             "custom_eval_metric_name": null,
             "num_class": 8,
@@ -268,7 +246,7 @@
         "status": "initialized",
         "final_loss": null,
         "train_time": null,
-        "data_type": "original_kmeans_features",
+        "data_type": "original",
         "max_time_for_learner": 60
     },
     "saved": [
@@ -276,8 +254,8 @@
     ],
     "predictions_fname": "15_LightGBM\\predictions_validation.csv",
     "metric_name": "logloss",
-    "final_loss": "1.5011230248651728",
-    "train_time": 1.0319125652313232,
+    "final_loss": "1.4545974362296665",
+    "train_time": 4.231716156005859,
     "is_stacked": false,
     "joblib_version": "1.3.2"
 }

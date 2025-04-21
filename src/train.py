@@ -6,7 +6,7 @@ from Classification import binaryClassification,decisionTree,knn,logisticRegress
 import shutil
 from datetime import datetime
 from src import guidanceButton
-from src.compareModels import render_model_comparison
+# from src.compareModels import render_model_comparison
 import os
 
 
@@ -19,7 +19,6 @@ def train_model(dataset):
     ml_task = st.selectbox(label="", options=["Classification", "Regression"],index=None ,placeholder="Select")
 
     model_choice=None
-
     guidanceButton.render_info_button(ml_task,model_choice)
 
     # Regression
@@ -33,10 +32,12 @@ def train_model(dataset):
 
         if(model_choice is not None):
             guidanceButton.render_info_button(ml_task,model_choice)
-            target_feature = st.selectbox("Select target feature",[None] + list(dataset.columns) , index=None,placeholder="Slect")
+            target_feature = st.selectbox("Select target feature", list(dataset.columns) , index=None,placeholder="Select")
 
-        if ml_task is not None:
-            render_model_comparison(dataset, target_feature, task_type="Regression")
+        # if ml_task is not None:
+        #     render_model_comparison(dataset, target_feature, task_type="Regression")
+        # if(model_choice is not None and target_feature is None):
+        #     st.warning("Select target column")
 
 
 
@@ -46,7 +47,7 @@ def train_model(dataset):
 
 
             if st.button("Run AutoModel"):
-                if (target_feature == "Select"):
+                if (target_feature == None):
                     st.warning("Please select a target column to continue.")
                 else:
                     X = dataset.drop(columns=[target_feature])
@@ -77,21 +78,21 @@ def train_model(dataset):
                     components = component.html(report.data,height=1000,scrolling=True)
 
         # Custom Models
+        if target_feature is not None:
+            if model_choice == "Linear Regression":
+                linearRegression.run_linear_regression(dataset, target_feature)
 
-        if model_choice == "Linear Regression":
-            linearRegression.run_linear_regression(dataset, target_feature)
+            elif model_choice == "Multiple Regression":
+                multipleRegression.run_multiple_regression(dataset, target_feature)
 
-        elif model_choice == "Multiple Regression":
-            multipleRegression.run_multiple_regression(dataset, target_feature)
+            elif model_choice == "Polynomial Regression":
+                polynomialRegression.run_polynomial_regression(dataset, target_feature)
 
-        elif model_choice == "Polynomial Regression":
-            polynomialRegression.run_polynomial_regression(dataset, target_feature)
+            elif model_choice == "Random Forest Regression":
+                randomForest.run_random_forest(dataset, target_feature)
 
-        elif model_choice == "Random Forest Regression":
-            randomForest.run_random_forest(dataset, target_feature)
-
-        elif model_choice == "Decision Tree Regression":
-            decisionTreeRegression.run_decision_tree(dataset, target_feature)
+            elif model_choice == "Decision Tree Regression":
+                decisionTreeRegression.run_decision_tree(dataset, target_feature)
 
     if ml_task == "Classification":
         model_choice = st.selectbox("Select Model", ["Binary Classification","Multiclass Classification", "Logistic Regression", "K-Nearest Neighbors", "Support Vector Machine", "Naive Bayes", "Decision Tree Classifier"],index=None,placeholder="Choose Model")
@@ -102,8 +103,8 @@ def train_model(dataset):
             guidanceButton.render_info_button(ml_task,model_choice)
             target_feature = st.selectbox("Select target feature", [None]+ list(dataset.columns),index=None,placeholder="Select")
         
-        if target_feature is not None:
-            render_model_comparison(dataset, target_feature, task_type="Classification")
+        # if target_feature is not None:
+        #     render_model_comparison(dataset, target_feature, task_type="Classification")
 
         # Automodel
         if model_choice == "Binary Classification" or model_choice == "Multiclass Classification":
@@ -114,7 +115,7 @@ def train_model(dataset):
             st.info(f"This Automodel will run all possible models for classification through MLJar automated Machine learning.")
 
             if st.button("Run AutoModel"):
-                if target_feature == "Select":
+                if target_feature == None:
                     st.warning("Please select a target column to continue.")
                 else:
                     X = dataset.drop(columns=[target_feature])
@@ -147,7 +148,7 @@ def train_model(dataset):
 
         # Custom Models
 
-        if  target_feature is not "Select" :
+        if  target_feature is not None :
             if model_choice == "Logistic Regression":
                 logisticRegression.run_logistic_regression(dataset, target_feature)
 
@@ -162,5 +163,5 @@ def train_model(dataset):
 
             elif model_choice == "Decision Tree Classifier":
                 decisionTree.run_decision_tree(dataset, target_feature)
-        elif model_choice is not "Choose":
-            st.warning("Select target feature to proceed")
+        # elif model_choice is not None:
+        #     st.warning("Select target feature to proceed")
