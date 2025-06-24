@@ -2,3 +2,5 @@ uploaded_dataset.csv
 automl_results/*
 artifacts
 configs/
+.env
+.streamlit/

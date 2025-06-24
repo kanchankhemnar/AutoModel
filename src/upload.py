@@ -26,15 +26,18 @@ def upload_dataset(dataset):
         sample_file = st.selectbox("select",options=[None]+ list(sample_datasets.keys()),index=None,placeholder="Choose sample dataset")
         if sample_file is not None:
             uploaded_file = sample_datasets[sample_file]
+
         
     if uploaded_file:
         csv_file = pd.read_csv(uploaded_file)
         dataset = csv_file
-        st.markdown("#### Dataset Preview")
-        st.write(dataset)
         csv_file.to_csv("uploaded_dataset.csv", index=None)
-    elif dataset is not None:
+
+    if dataset is not None:
         st.markdown("####  Dataset Preview")
+        st.write("Dataset name")
+        if(st.button(label="Save Dataset",type="primary")):
+            pass
         st.write(dataset)
     return dataset
 

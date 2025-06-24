@@ -1,8 +1,9 @@
 import pyrebase
 import json
-
-with open("configs/firebase_web_config.json") as f:
-  firebase_config = json.load(f)
+import os
+# with open("configs/firebase_web_config.json") as f:
+#   firebase_config = json.load(f)
+firebase_config = json.loads(os.environ["FIREBASE_CONFIG"])
 
 firebase = pyrebase.initialize_app(firebase_config)
 auth = firebase.auth()

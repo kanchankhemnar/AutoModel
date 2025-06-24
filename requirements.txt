@@ -222,3 +222,7 @@ zipp                       3.21.0
 
 streamlit==1.44.1
 pandas==2.1.4
+pyrebase
+firebase-admin
+json
+os
