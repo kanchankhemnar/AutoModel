@@ -7,7 +7,7 @@ st.set_page_config("AutoModel", "🤖", layout="wide")
 st.title("AutoML dashboard 📊📈")
 
 with st.sidebar:
-    st.image("sidebar_image.png")
+    st.image("static/sidebar_image.png")
     sidebar.sidebar_content()
 
 dataset = None

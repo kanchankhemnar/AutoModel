@@ -1,8 +1,8 @@
 import streamlit as st
 from supervised.automl import AutoML
 import streamlit.components.v1 as component
-from Regression import linearRegression, multipleRegression, polynomialRegression, randomForest, decisionTreeRegression
-from Classification import binaryClassification,decisionTree,knn,logisticRegression,naiveBayes,svm
+from ml.Regression import linearRegression, multipleRegression, polynomialRegression, randomForest, decisionTreeRegression
+from ml.Classification import binaryClassification,decisionTree,knn,logisticRegression,naiveBayes,svm
 import shutil
 from datetime import datetime
 from src import guidanceButton
