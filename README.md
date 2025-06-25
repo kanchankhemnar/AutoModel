@@ -16,7 +16,7 @@ This is **Version 1.0**, focused on:
 
 ## 🚀 Live Demo
 
-👉 [Visit AutoModel on Render](https://your-deployed-link.onrender.com)
+👉 [Visit AutoModel on Render](https://automodel.onrender.com)
 
 ---
 
@@ -57,7 +57,7 @@ AutoModel/
 - 🔐 **Firebase** — Auth, Firestore, Storage
 - 📦 **Pyrebase4** + `firebase-admin`
 - 🤖 **mljar-supervised** — AutoML core engine
-- 🧠 `scikit-learn`, `xgboost`, `pandas`, `matplotlib`
+- 🧠 `scikit-learn`, `seaborn`, `pandas`, `matplotlib`
 - ☁️ **Render** — hosting + deployment
 
 ---
