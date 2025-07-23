@@ -1,0 +1,204 @@
+{
+    "uid": "eb47883f-ccf3-4511-959f-673b19480ccc",
+    "name": "4_Linear_KMeansFeatures",
+    "preprocessing": [
+        {
+            "kmeans": {
+                "new_features": [
+                    "Dist_Cluster_0",
+                    "Dist_Cluster_1",
+                    "Dist_Cluster_2",
+                    "Dist_Cluster_3",
+                    "Dist_Cluster_4",
+                    "Dist_Cluster_5",
+                    "Dist_Cluster_6",
+                    "Cluster"
+                ],
+                "result_file": "4_Linear_KMeansFeatures\\kmeans_fold_0.joblib",
+                "input_columns": [
+                    "long_hair",
+                    "forehead_width_cm",
+                    "forehead_height_cm",
+                    "nose_wide",
+                    "nose_long",
+                    "lips_thin",
+                    "distance_nose_to_lip_long"
+                ]
+            },
+            "scale": [
+                {
+                    "scale": [
+                        0.336547760446758,
+                        1.1108206933792268,
+                        0.5401816795427075,
+                        0.49987652796453297,
+                        1.2815029614588542,
+                        1.192572188019592,
+                        1.0102536958413242,
+                        1.043121400333939,
+                        1.0032308273788686,
+                        0.5938599643785895,
+                        1.2354433323677356,
+                        2.0241199886358174
+                    ],
+                    "mean": [
+                        0.8697777777777778,
+                        13.184377777777778,
+                        5.943555555555555,
+                        0.5111111111111111,
+                        3.0436883609394547,
+                        3.322394595653942,
+                        3.147579412402714,
+                        2.87608481672271,
+                        3.0282919095894565,
+                        3.7354973582438986,
+                        3.039072224321003,
+                        2.8777777777777778
+                    ],
+                    "var": [
+                        0.11326439506172842,
+                        1.2339226128395062,
+                        0.29179624691358025,
+                        0.2498765432098765,
+                        1.6422498402278138,
+                        1.4222284236378373,
+                        1.020612529961055,
+                        1.088102255834638,
+                        1.006472093003289,
+                        0.3526696572917396,
+                        1.5263202274918952,
+                        4.097061728395062
+                    ],
+                    "n_samples_seen": 4500,
+                    "n_features_in": 12,
+                    "columns": [
+                        "long_hair",
+                        "forehead_width_cm",
+                        "forehead_height_cm",
+                        "nose_long",
+                        "Dist_Cluster_0",
+                        "Dist_Cluster_1",
+                        "Dist_Cluster_2",
+                        "Dist_Cluster_3",
+                        "Dist_Cluster_4",
+                        "Dist_Cluster_5",
+                        "Dist_Cluster_6",
+                        "Cluster"
+                    ],
+                    "scale_method": "scale_normal"
+                }
+            ],
+            "categorical_y": {
+                "Female": 0,
+                "Male": 1
+            },
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "long_hair": [
+                        "scale_normal"
+                    ],
+                    "forehead_width_cm": [
+                        "scale_normal"
+                    ],
+                    "forehead_height_cm": [
+                        "scale_normal"
+                    ],
+                    "nose_long": [
+                        "scale_normal"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude",
+                    "categorical_to_int"
+                ],
+                "ml_task": "binary_classification",
+                "kmeans_features": {
+                    "results_path": "automl_results_classification\\gender"
+                }
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "1.5.2",
+            "algorithm_name": "Logistic Regression",
+            "algorithm_short_name": "Linear",
+            "uid": "e146aafc-b7f3-49fb-af45-608d5c87adf3",
+            "params": {
+                "model_type": "Linear",
+                "ml_task": "binary_classification",
+                "n_jobs": -1,
+                "seed": 1235,
+                "explain_level": 0
+            },
+            "name": "learner_fold_0"
+        }
+    ],
+    "params": {
+        "additional": {
+            "max_steps": 1,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "long_hair": [
+                    "scale_normal"
+                ],
+                "forehead_width_cm": [
+                    "scale_normal"
+                ],
+                "forehead_height_cm": [
+                    "scale_normal"
+                ],
+                "nose_long": [
+                    "scale_normal"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude",
+                "categorical_to_int"
+            ],
+            "ml_task": "binary_classification",
+            "kmeans_features": {
+                "results_path": "automl_results_classification\\gender"
+            }
+        },
+        "validation_strategy": {
+            "validation_type": "split",
+            "train_ratio": 0.9,
+            "shuffle": true,
+            "stratify": true,
+            "X_path": "automl_results_classification\\gender\\X.data",
+            "y_path": "automl_results_classification\\gender\\y.data",
+            "results_path": "automl_results_classification\\gender"
+        },
+        "learner": {
+            "model_type": "Linear",
+            "ml_task": "binary_classification",
+            "n_jobs": -1,
+            "seed": 1235,
+            "explain_level": 0
+        },
+        "automl_random_state": 1234,
+        "ml_task": "binary_classification",
+        "explain_level": 0,
+        "name": "4_Linear_KMeansFeatures",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null,
+        "data_type": "original_kmeans_features",
+        "max_time_for_learner": 60
+    },
+    "saved": [
+        "4_Linear_KMeansFeatures\\learner_fold_0.linear"
+    ],
+    "predictions_fname": "4_Linear_KMeansFeatures\\predictions_validation.csv",
+    "metric_name": "logloss",
+    "final_loss": "0.06511237361672367",
+    "train_time": 3.841841220855713,
+    "is_stacked": false,
+    "joblib_version": "1.3.2",
+    "threshold": 0.37439633140485495
+}

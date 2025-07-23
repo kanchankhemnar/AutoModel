@@ -1,14 +1,11 @@
-import streamlit as st
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.metrics import r2_score, root_mean_squared_error, mean_absolute_error
-import numpy as np
-import time
-from backend.utils.save_outputs import save_html_report,save_plot
-
-
-
 def regression_report(y_true, y_pred):
+    import streamlit as st
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    from sklearn.metrics import r2_score, root_mean_squared_error, mean_absolute_error
+    import numpy as np
+    import time
+    from backend.utils.save_outputs import save_html_report,save_plot
     with st.spinner("Executing 🚀..."):
         time.sleep(3)
     st.markdown("## 📊 Model Evaluation Report")

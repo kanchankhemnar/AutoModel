@@ -1,0 +1,20 @@
+name,model_type,metric_type,metric_value,train_time
+1_DecisionTree,Decision Tree,logloss,0.1381974793957853,2.0
+2_DecisionTree,Decision Tree,logloss,0.09803407734973409,2.41
+3_DecisionTree,Decision Tree,logloss,0.09803407734973409,2.4
+4_Linear,Linear,logloss,0.06228057991724225,5.0
+5_Default_LightGBM,LightGBM,logloss,0.06863808161532711,2.78
+6_Default_Xgboost,Xgboost,logloss,0.06252587600732903,2.73
+16_LightGBM,LightGBM,logloss,0.06400065603347102,2.65
+7_Xgboost,Xgboost,logloss,0.062435938216947616,3.17
+25_CatBoost,CatBoost,logloss,0.06560474521724373,3.81
+34_RandomForest,Random Forest,logloss,0.08050896942515513,3.44
+43_ExtraTrees,Extra Trees,logloss,0.08671411268949424,3.28
+52_NeuralNetwork,Neural Network,logloss,0.08100048116010741,3.63
+4_Linear_KMeansFeatures,Linear,logloss,0.06511237361672367,4.59
+53_Xgboost,Xgboost,logloss,0.06209709344435521,2.71
+54_Xgboost,Xgboost,logloss,0.06401701829796269,2.81
+55_LightGBM,LightGBM,logloss,0.06324274446155001,2.81
+56_Xgboost,Xgboost,logloss,0.06198575482033643,2.82
+57_Xgboost,Xgboost,logloss,0.061423434305871945,2.9
+Ensemble,Ensemble,logloss,0.05830231680408839,2.89

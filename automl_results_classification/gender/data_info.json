@@ -1,0 +1,38 @@
+{
+    "columns": [
+        "long_hair",
+        "forehead_width_cm",
+        "forehead_height_cm",
+        "nose_wide",
+        "nose_long",
+        "lips_thin",
+        "distance_nose_to_lip_long"
+    ],
+    "rows": 5001,
+    "cols": 7,
+    "target_is_numeric": false,
+    "columns_info": {
+        "long_hair": [
+            "scale"
+        ],
+        "forehead_width_cm": [
+            "scale"
+        ],
+        "forehead_height_cm": [
+            "scale"
+        ],
+        "nose_wide": [],
+        "nose_long": [
+            "scale"
+        ],
+        "lips_thin": [],
+        "distance_nose_to_lip_long": []
+    },
+    "target_info": [
+        "convert_0_1"
+    ],
+    "n_features": 7,
+    "is_sample_weighted": false,
+    "is_fairness_applied": false,
+    "n_classes": 2
+}

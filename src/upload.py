@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-import uuid
-
 uploaded_file = None
 
 def upload_dataset(dataset):

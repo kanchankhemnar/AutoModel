@@ -1,16 +1,23 @@
-import streamlit as st
-from supervised.automl import AutoML
-import streamlit.components.v1 as component
-from ml.Regression import linearRegression, multipleRegression, polynomialRegression, randomForest, decisionTreeRegression
-from ml.Classification import binaryClassification,decisionTree,knn,logisticRegression,naiveBayes,svm
-import shutil
-from datetime import datetime
-from src import guidanceButton
-# from src.compareModels import render_model_comparison
-import os
-
+def infer_task_type(target_series):
+    if target_series is None:
+        return
+    import pandas as pd
+    unique_values = target_series.nunique()
+    if target_series.dtype == 'object' or unique_values < 20:
+        return "Classification"
+    elif pd.api.types.is_numeric_dtype(target_series):
+        return "Regression"
+    else:
+        return "unknown"
 
 def train_model(dataset):
+    import streamlit as st
+    from supervised.automl import AutoML
+    import streamlit.components.v1 as component
+    from ml.Regression import  regressionCodeTemplate
+    from ml.Classification import classificationCodeTemplate
+    import shutil
+    import os
     if dataset is None:
         st.warning(":arrow_double_up: Upload Dataset first")
         return
@@ -19,7 +26,6 @@ def train_model(dataset):
     ml_task = st.selectbox(label="", options=["Classification", "Regression"],index=None ,placeholder="Select")
 
     model_choice=None
-    guidanceButton.render_info_button(ml_task,model_choice)
 
     # Regression
     
@@ -30,20 +36,20 @@ def train_model(dataset):
 
         target_feature = None
 
-        if(model_choice is not None):
-            guidanceButton.render_info_button(ml_task,model_choice)
-            target_feature = st.selectbox("Select target feature", list(dataset.columns) , index=None,placeholder="Select")
 
-        # if ml_task is not None:
-        #     render_model_comparison(dataset, target_feature, task_type="Regression")
-        # if(model_choice is not None and target_feature is None):
-        #     st.warning("Select target column")
+        target_feature = st.selectbox("Select target feature", list(dataset.columns) , index=None,placeholder="Select")
 
+        if (target_feature is not None):
+            inferred_task = infer_task_type(dataset[target_feature])
 
+            if (target_feature is not None and inferred_task != ml_task):
+                st.error(f"⚠️ Your selected task is '{ml_task}', but the data looks like a '{inferred_task}' task. Please select '{inferred_task}'.")
+                st.stop()
 
         # Automodel
         if model_choice == "All Models":
             st.info("This Automodel will run all possible models for regression through MLJar automated Machine learning.")
+            st.warning("Note : MLJar takes time to load. Please wait for few seconds.")
 
 
             if st.button("Run AutoModel"):
@@ -78,36 +84,43 @@ def train_model(dataset):
                     components = component.html(report.data,height=1000,scrolling=True)
 
         # Custom Models
-        if target_feature is not None:
-            if model_choice == "Linear Regression":
-                linearRegression.run_linear_regression(dataset, target_feature)
+        if (target_feature is not None and model_choice is not None):
+            if(st.button("Run Model")):
+                if model_choice == "Linear Regression":
+                    regressionCodeTemplate.run_regression(dataset, target_feature, model_choice , f"📈{model_choice}")
 
-            elif model_choice == "Multiple Regression":
-                multipleRegression.run_multiple_regression(dataset, target_feature)
+                elif model_choice == "Multiple Regression":
+                    regressionCodeTemplate.run_regression(dataset, target_feature, model_choice , f"📈{model_choice}")
 
-            elif model_choice == "Polynomial Regression":
-                polynomialRegression.run_polynomial_regression(dataset, target_feature)
+                elif model_choice == "Polynomial Regression":
+                    regressionCodeTemplate.run_regression(dataset, target_feature, model_choice , f"📈{model_choice}")
 
-            elif model_choice == "Random Forest Regression":
-                randomForest.run_random_forest(dataset, target_feature)
+                elif model_choice == "Random Forest Regression":
+                    regressionCodeTemplate.run_regression(dataset, target_feature , model_choice , f"🌲{model_choice}")
 
-            elif model_choice == "Decision Tree Regression":
-                decisionTreeRegression.run_decision_tree(dataset, target_feature)
+                elif model_choice == "Decision Tree Regression":
+                    regressionCodeTemplate.run_regression(dataset, target_feature , model_choice , f"🌲{model_choice}")
 
     if ml_task == "Classification":
         model_choice = st.selectbox("Select Model", ["Binary Classification","Multiclass Classification", "Logistic Regression", "K-Nearest Neighbors", "Support Vector Machine", "Naive Bayes", "Decision Tree Classifier"],index=None,placeholder="Choose Model")
 
         target_feature = None
 
-        if model_choice != None:
-            guidanceButton.render_info_button(ml_task,model_choice)
-            target_feature = st.selectbox("Select target feature", [None]+ list(dataset.columns),index=None,placeholder="Select")
-        
-        # if target_feature is not None:
-        #     render_model_comparison(dataset, target_feature, task_type="Classification")
+        # if model_choice != None:
+        #     guidanceButton.render_info_button(ml_task,model_choice)
+        target_feature = st.selectbox("Select target feature", [None]+ list(dataset.columns),index=None,placeholder="Select")
+
+        if (target_feature is not None):
+            inferred_task = infer_task_type(dataset[target_feature])
+
+            if (target_feature is not None and inferred_task != ml_task):
+                st.error(f"⚠️ Your selected task is '{ml_task}', but the data looks like a '{inferred_task}' task. Please select '{inferred_task}'.")
+                st.stop()
 
         # Automodel
+        mljar_task = False
         if model_choice == "Binary Classification" or model_choice == "Multiclass Classification":
+            mljar_task = True
             if model_choice == "Binary Classification":
                 ml_task = "binary_classification" 
             else:
@@ -148,20 +161,20 @@ def train_model(dataset):
 
         # Custom Models
 
-        if  target_feature is not None :
-            if model_choice == "Logistic Regression":
-                logisticRegression.run_logistic_regression(dataset, target_feature)
+        if  (target_feature is not None and model_choice is not None and mljar_task is False):
+            if(st.button("Run Model")):
+                if model_choice == "Logistic Regression":
+                    classificationCodeTemplate.run_classification(dataset, target_feature, model_choice, f"🔐{model_choice}")
 
-            elif model_choice == "K-Nearest Neighbors":
-                knn.run_knn(dataset, target_feature)
+                elif model_choice == "K-Nearest Neighbors":
+                    classificationCodeTemplate.run_classification(dataset, target_feature, model_choice, f"🔐{model_choice}")
 
-            elif model_choice == "Support Vector Machine":
-                svm.run_svm(dataset, target_feature)
+                elif model_choice == "Support Vector Machine":
+                    classificationCodeTemplate.run_classification(dataset, target_feature, model_choice, f"🔐{model_choice}")
 
-            elif model_choice == "Naive Bayes":
-                naiveBayes.run_naive_bayes(dataset, target_feature)
+                elif model_choice == "Naive Bayes":
+                    classificationCodeTemplate.run_classification(dataset, target_feature, model_choice, f"🔐{model_choice}")
 
-            elif model_choice == "Decision Tree Classifier":
-                decisionTree.run_decision_tree(dataset, target_feature)
-        # elif model_choice is not None:
-        #     st.warning("Select target feature to proceed")
+                elif model_choice == "Decision Tree Classifier":
+                    classificationCodeTemplate.run_classification(dataset, target_feature, model_choice, f"🔐{model_choice}")
+

@@ -1,10 +1,8 @@
-import streamlit as st
-import seaborn as sns
-import matplotlib.pyplot as plt
-import pandas as pd
-import io
-
 def profile_data(dataset):
+    import streamlit as st
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    import pandas as pd
     if dataset is not None:
         st.subheader("📊 Automated Data Profiling")
 
