@@ -1,5 +1,5 @@
+import streamlit as st
 def login_page():
-    import streamlit as st
     from backend.auth import login_user, signup_user
 
     st.title("🔐 Login to AutoModel")

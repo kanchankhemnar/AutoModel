@@ -1,9 +1,11 @@
 import pyrebase
 import json
+# import streamlit as st
 import os
-with open("configs/firebase_web_config.json") as f:
-  firebase_config = json.load(f)
-# firebase_config = json.loads(os.environ["FIREBASE_CONFIG"])
+# with open("configs/firebase_web_config.json") as f:
+#   firebase_config = json.load(f)
+# st.write(st.secrets["FIREBASE_CONFIG"])
+firebase_config = json.loads(os.environ["FIREBASE_CONFIG"])
 
 firebase = pyrebase.initialize_app(firebase_config)
 auth = firebase.auth()

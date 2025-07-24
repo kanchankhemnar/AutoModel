@@ -13,13 +13,16 @@ def run_regression(dataset, target_col, model_choice, header):
 
     if model_choice == "Linear Regression":
       if len(X_train[0]) > 1:
-        st.warning("Linear Regression assumes single feature. For multiple, use Multiple Regression.")
+        st.warning("Linear Regression assumes single feature. For multiple features, use Multiple Regression.")
         return
       from sklearn.linear_model import LinearRegression
       algorithm = LinearRegression()
 
 
     elif model_choice == "Multiple Regression":
+      if X_train.shape[1] <= 1:
+          st.warning("Multiple Regression requires more than one feature. Use Linear Regression instead.")
+          return
       from sklearn.linear_model import LinearRegression
       algorithm = LinearRegression()
 
